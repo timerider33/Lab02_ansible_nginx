@@ -30,3 +30,5 @@
 ```bash
 ansible-playbook -i inventory.ini playbook-lab02.yml
 ```
+
+В папке ansible_logs справочно находится логфайл запуска плейбука.
