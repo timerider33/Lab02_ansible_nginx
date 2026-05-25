@@ -1,0 +1,33 @@
+---
+- name: Install nginx on webservers
+  hosts: webservers
+  remote_user: runner
+  become: yes
+  become_method: sudo
+  gather_facts: no
+
+  tasks:
+    - name: Install nginx
+      ansible.builtin.apt:
+        name: nginx
+        state: present
+        update_cache: yes
+
+    - name: Copy index.html
+      ansible.builtin.copy:
+        src: index.html
+        dest: /var/www/html/index.html
+        owner: root
+        group: root
+        mode: '0666'
+
+    - name: Check if nginx is started and enabled
+      ansible.builtin.service:
+        name: nginx
+        state: started
+        enabled: true
+
+    - name: Print message
+      ansible.builtin.debug:
+        msg: "Nginx has been deployed to webservers"
+
