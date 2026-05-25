@@ -1,0 +1,40 @@
+
+PLAY [Install nginx on webservers] *********************************************
+
+TASK [Install nginx] ***********************************************************
+changed: [10.0.22.3]
+
+TASK [Copy index.html] *********************************************************
+ok: [10.0.22.3]
+
+TASK [Check if nginx is started and enabled] ***********************************
+ok: [10.0.22.3]
+
+TASK [Print message] ***********************************************************
+ok: [10.0.22.3] => {
+    "msg": "Nginx has been deployed to webservers"
+}
+
+PLAY RECAP *********************************************************************
+10.0.22.3                  : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+PLAY [Install nginx on webservers] *********************************************
+
+TASK [Install nginx] ***********************************************************
+ok: [10.0.22.3]
+
+TASK [Copy index.html] *********************************************************
+ok: [10.0.22.3]
+
+TASK [Check if nginx is started and enabled] ***********************************
+ok: [10.0.22.3]
+
+TASK [Print message] ***********************************************************
+ok: [10.0.22.3] => {
+    "msg": "Nginx has been deployed to webservers"
+}
+
+PLAY RECAP *********************************************************************
+10.0.22.3                  : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
